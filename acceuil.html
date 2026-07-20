@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <center>
+        <title>Espace Étudiant</title>
+         <link rel="stylesheet" href="style.css">
+    </center>   
+</head>
+<body class="fond">
+
+    <nav class="menu">
+        <a href="acceuil.html">Acceuil</a>
+        <a href="formulaire.html">Créer un compte</a>
+        <a href="tableau.html">Programme</a>
+        <a href="quiz.html">quiz du jour</a>
+    </nav>
+
+    <!-- Partie haute : citation -->
+    <div id="top-section">
+        <center>
+            <h1>Bienvenue à l’Espace Étudiant</h1>
+            <p>Explorez la technologie, l’IA et le monde numérique.</p>
+            <div class="quote-box" id="quote"></div>
+        </center>
+        
+    </div>
+
+    <hr>
+
+    <!-- Partie basse : calendrier + image -->
+    <div id="bottom-section">
+        <div>
+            <div id="calendar">
+                <div class="calendar-header">
+                    <button id="prev-month">&lt;</button>
+                    <div id="month-year"></div>
+                    <button id="next-month">&gt;</button>
+                </div>
+                <div class="calendar-days">
+                    <div>Dim</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mer</div>
+                    <div>Jeu</div>
+                    <div>Ven</div>
+                    <div>Sam</div>
+                </div>
+                <div class="calendar-dates" id="calendar-dates"></div>
+                
+               
+            </div>
+        </div>
+        <div>
+            <img src="images/helloworld.png" alt="AI">
+        </div>
+    </div>
+
+<script>
+    // Citation aléatoire
+    const quotes = [
+        "Crois en toi, tu es plus fort que tu ne le penses.",
+        "Chaque jour est une nouvelle chance de réussir.",
+        "N'abandonne jamais, le début est toujours le plus difficile.",
+        "Le succès appartient à ceux qui osent.",
+        "Petit pas aujourd’hui, grand progrès demain.",
+        "Travaille en silence, laisse ton succès faire du bruit."
+    ];
+    document.getElementById("quote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
+
+    // Calendrier
+    const monthYear = document.getElementById('month-year');
+    const calendarDates = document.getElementById('calendar-dates');
+    const prevBtn = document.getElementById('prev-month');
+    const nextBtn = document.getElementById('next-month');
+
+    let today = new Date();
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
+
+    function renderCalendar(month, year) {
+        calendarDates.innerHTML = '';
+        monthYear.innerText = `${today.toLocaleString('fr-FR', { month: 'long' })} ${year}`;
+
+        let firstDay = new Date(year, month, 1).getDay();
+        let daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        for (let i = 0; i < firstDay; i++) {
+            calendarDates.appendChild(document.createElement('div'));
+        }
+
+        for (let i = 1; i <= daysInMonth; i++) {
+            const dayDiv = document.createElement('div');
+            dayDiv.innerText = i;
+            if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                dayDiv.classList.add('today');
+            }
+            calendarDates.appendChild(dayDiv);
+        }
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        renderCalendar(currentMonth, currentYear);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        renderCalendar(currentMonth, currentYear);
+    });
+
+    renderCalendar(currentMonth, currentYear);
+</script>
+
+</body>
+</html>
+
+

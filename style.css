@@ -1,0 +1,259 @@
+/* Fond et texte général */
+body {
+    background-image: url("ciel.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color:#0051ad ;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* MENU */
+.menu {
+    background-color:#009218;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #0051ad;
+    text-decoration: underline;
+}
+
+/* Partie haute : titre et texte */
+#top-section h1 {
+    font-size: 70px;      
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+#top-section p {
+    font-size: 50px;      
+    line-height: 1.6;     
+    max-width: 800px;     
+    margin: 0 auto 30px auto;
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+}
+
+/* Quote-box */
+.quote-box {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 500px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    background: #d2eee3;
+    border-radius: 12px;
+}
+
+/* Trait de séparation */
+hr {
+    height: 2px;
+    background-color: #009218;
+    border: none;
+    margin: 0 50px;
+}
+
+/* Partie basse : calendrier + image */
+#bottom-section {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+#bottom-section > div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bottom-section > div:last-child {
+    flex: 1.5; /* colonne image plus large */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Calendrier */
+/* Calendrier général */
+#calendar {
+    width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.85); /* semi-transparent pour voir le fond */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* En-tête du calendrier */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-header button {
+    background-color: #4f9af0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calendar-header button:hover {
+    background-color: #0051ad;
+}
+
+/* Nom du mois et année */
+#month-year {
+    font-size: 20px;
+    font-weight: bold;
+    color:#0051ad ;
+}
+
+/* Jours de la semaine */
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    margin-bottom: 10px;
+     color: #0051ad;
+}
+
+/* Grille des dates */
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-dates div {
+    padding: 35px 0;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.7);
+    transition: transform 0.2s, background-color 0.3s;
+    cursor: pointer;
+}
+
+/* Effet au survol */
+.calendar-dates div:hover {
+    background-color: #99f7cf;
+    transform: scale(1.1);
+}
+
+/* Jour actuel */
+.today {
+    background-color: #99f7cf;
+    color: #0669eb;
+    font-weight: bold;
+}
+
+/* Responsive : réduire la taille sur mobile */
+@media (max-width: 500px) {
+    #calendar {
+        width: 90%;
+        padding: 15px;
+    }
+    .calendar-days div, .calendar-dates div {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+}
+
+
+/* Image */
+#bottom-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+
+}
+
+
+#bottom-section img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+form {
+    display: flex;
+    flex-direction: column; /* met tout en colonne */
+    max-width: 500px;       /* largeur limitée */
+    margin: 30px auto;      /* centrer le formulaire */
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+form label {
+    margin-top: 15px; /* espace entre les champs */
+    font-weight: bold;
+}
+
+form input, form select {
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #003104;
+    font-size: 16px;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0051ad;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #00a01b;
+}
+body {
+    background-image: url("ciel.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color:#000f61 ;
+    padding: 0;
+}
+
+/* Fond général */
+body {
+    background-image: url("ciel.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: #000f61 ;
+    margin: 0;
+    padding: 0;
+}
+

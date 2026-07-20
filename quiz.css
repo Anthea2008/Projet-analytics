@@ -1,0 +1,93 @@
+/* MENU */
+.menu {
+    background-color:#009218;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #0051ad;
+    text-decoration: underline;
+}
+/* Corps de la page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("ciel.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;   
+}
+
+/* Titre principal */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #000f61;
+    text-shadow: 2px 2px 4px black;
+    font-size: 50px; /* corrigé de 150xp */
+}
+
+/* Conteneur du quiz */
+.quiz-container {
+    width: 80%;
+    margin: 40px auto;
+    background: rgba(170, 250, 223, 0.85);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 38, 255, 0.719);
+}
+
+/* Questions */
+.question {
+    font-weight: bold;
+    font-size: 40px; /* corrigé de 100xp */
+    margin-bottom: 15px;
+    text-align: center; /* centré */
+}
+
+/* Réponses */
+.answers label {
+    display: block;  /* Chaque réponse sur une nouvelle ligne */
+    margin-bottom: 8px;
+    font-size: 30px; /* corrigé de 100xp */
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Bouton Valider */
+button {
+    display: block;
+    background-color: #009218;
+    color: white;
+    padding: 15px 30px;
+    font-size: 24px; /* gros et lisible */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px auto; /* centré */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(0, 81, 255);
+}
+
+/* Résultat */
+#result {
+    text-align: center;
+    font-size: 36px; /* lisible */
+    margin-top: 20px;
+    font-weight: bold;
+    color: #000f61;
+    text-shadow: 2px 2px 4px #ffffff;
+}
