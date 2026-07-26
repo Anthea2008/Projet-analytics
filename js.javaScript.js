@@ -28,7 +28,7 @@ function trackStudentAction(actionName) {
 }
 
 // Exemple d'utilisation sur un bouton de téléchargement :
-// <button onclick="trackStudentAction('Téléchargement Planning')">Télécharger le Planning</button>
+<button onclick="trackStudentAction('Téléchargement Planning')">Télécharger le Planning</button>
 </script>
 
 <!-- HTML : La barre de recherche et la liste -->
